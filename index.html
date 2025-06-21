@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Predicción de Rotación de Empleados</title>
+    <style>
+        body { font-family: sans-serif; max-width: 600px; margin: auto; padding: 20px; }
+        form { display: flex; flex-direction: column; gap: 10px; }
+        input, select { padding: 8px; }
+        button { padding: 10px; background-color: #007bff; color: white; border: none; cursor: pointer; }
+        #resultado { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h1>Análisis Predictivo de Rotación de Empleados</h1>
+    <p>Ingrese los datos de un empleado para predecir la probabilidad de que abandone la empresa.</p>
+
+    <form id="prediction-form">
+        <label for="age">Edad:</label>
+        <input type="number" id="age" required>
+
+        <label for="monthlyIncome">Ingreso Mensual:</label>
+        <input type="number" id="monthlyIncome" required>
+
+        <label for="jobRole">Cargo:</label>
+        <select id="jobRole" required>
+            <option value="Sales Executive">Sales Executive</option>
+            <option value="Research Scientist">Research Scientist</option>
+            <option value="Laboratory Technician">Laboratory Technician</option>
+            <option value="Manufacturing Director">Manufacturing Director</option>
+            <option value="Healthcare Representative">Healthcare Representative</option>
+            <option value="Manager">Manager</option>
+            <option value="Sales Representative">Sales Representative</option>
+            <option value="Research Director">Research Director</option>
+            <option value="Human Resources">Human Resources</option>
+        </select>
+        
+        <label for="totalWorkingYears">Años de Experiencia:</label>
+        <input type="number" id="totalWorkingYears" required>
+
+        <label for="yearsAtCompany">Años en la Empresa:</label>
+        <input type="number" id="yearsAtCompany" required>
+
+        <label for="overTime">¿Hace horas extra?:</label>
+        <select id="overTime" required>
+            <option value="Yes">Sí</option>
+            <option value="No">No</option>
+        </select>
+
+        <label for="businessTravel">¿Viaja por trabajo?:</o>
+        <select id="businessTravel" required>
+            <option value="Travel_Frequently">Frecuentemente</option>
+            <option value="Travel_Rarely">Raramente</option>
+            <option value="Non-Travel">No viaja</option>
+        </select>
+        
+        <button type="submit">¿Este empleado está en riesgo de irse?</button>
+    </form>
+    
+    <div id="resultado"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
